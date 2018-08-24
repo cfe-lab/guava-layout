@@ -61,7 +61,7 @@
 <br/>
 
 <div class="menuSystem">
-<form name="myForm" method="post" action="cgi-bin/generateGuavaLayout.pl" onSubmit="return validateForm()">
+<form name="myForm" method="post" action="../cgi-bin/python/guava_generate_files.py" onSubmit="return validateForm()">
 
 	<div class="col1">
 		<textarea class="controls" id="controls" rows="8" cols="40"></textarea>
@@ -100,6 +100,7 @@
 	<button type="button" class="b1" onClick="resetFields()">Reset Fields</button>
 	<button type="button" class="b2" onClick="dumpTable()">Update FROM table</button>
 	<input type="submit" class="b3" name="subbtn" value="Submit"/>
+	<p style="color: grey; font-size: 0.6em;">Note: All data from the old tool has been copied into this tool's "old tool archive" folder.<br>Written in python.</p>
 </form>
 </div>
 
