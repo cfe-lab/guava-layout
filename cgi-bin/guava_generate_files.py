@@ -1,4 +1,4 @@
-#!/Library/Frameworks/Python.framework/Versions/3.6/bin/python3
+#!/lib/anaconda3/bin/python3.7
 
 # Notes:
 # - When creating a file, make sure it's folder has enough permissions.
@@ -13,12 +13,14 @@ print ( "</head><body>" )
 import re, cgi, os, sys
 import datetime
 
+CGI_BIN_PATH = "/var/www/cgi-bin"
+
 # Add the path to util scripts.
-sys.path.append( "{}/../python_dependencies/3.6/util_scripts/".format(os.getcwd()) )
+sys.path.append( "{}/depend/util_scripts/".format(CGI_BIN_PATH) )
 import mailer
 import math_utils
 
-OUT_PATH = "{}/../../guava_python/output/".format( os.getcwd() )
+OUT_PATH = "/alldata/WebContent/tools/guava_layout/output/"
 
 
 ##### Get website input.
@@ -140,7 +142,7 @@ print ( "Created .html file. <br>...<br>" )
 
 
 print ( 'Your files have been generated.<br>' )
-web_address = "http://brockman-srv.mbb.sfu.ca/~B_Team_iMac/guava_python/output/"
+web_address = "https://bblab-hivresearchtools.ca/tools/guava_layout/output/"
 print ( '<a style="font-size: 1.5em;" href="{}">Go to file directory</a><br><br>'.format( web_address ) )  # Fix this too.
 
 
