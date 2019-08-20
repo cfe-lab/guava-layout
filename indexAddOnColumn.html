@@ -1,17 +1,19 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+{% extends "tool_base.html" %}
+{% load static %}
 
-<html>
+{% block head %}
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	<script type="text/javascript" src="javascript/scriptsAddOnCollumn.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static "gld_style.css" %}"/>
+	<script type="text/javascript" src="{% static "gld_scriptsAddOnColumn.js" %}"></script>
 	<title>Guava Layout Designer</title>
 </head>
+{% endblock %}
 
-<body>
 
-<h1>Guava Layout Designer (<a href="index.html">Traverse along rows</a>) (<a href="https://bblab-hivresearchtools.ca/wiki/">Return to main menu</a>) (<a href="output">Show old data</a>)</h1>
+{% block content %}
+<div id="body-div">
+<h1>Guava Layout Designer (<a href="/django/tools/guava_layout/">Traverse along rows</a>) (<a href="/django/tools/guava_layout/output/">Show old data</a>)</h1>
 
 <table border="0" id="layout">
 
@@ -61,8 +63,8 @@
 <br/>
 
 <div class="menuSystem">
-<form name="myForm" method="post" action="../../cgi-bin/guava_generate_files.py" onSubmit="return validateForm()">
-
+<form name="myForm" method="post" action="generate_files/" onSubmit="return validateForm()">
+	{% csrf_token %}
 	<div class="col1">
 		<textarea class="guavaSamples" id="guavaSamples" rows="8" cols="40"></textarea>
 		<textarea class="manualFields" name="manualFields" id="manualFields" rows="8" cols="40"></textarea>
@@ -102,6 +104,5 @@
 	<p style="color: grey; font-size: 0.6em;">Note: All data from the old tool has been copied into this tool's "old-tool-archive" folder.<br>Written in python.</p>
 </form>
 </div>
-
-</body>
-</html>
+</div>
+{% endblock %}

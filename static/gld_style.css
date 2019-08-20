@@ -1,3 +1,7 @@
+#body-div {
+	margin: 8px;	
+}
+
 br {	clear:left; 	}
 
 label {	float:left;
